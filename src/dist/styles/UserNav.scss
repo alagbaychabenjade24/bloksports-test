@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+$font-primary: 'Roboto', sans-serif;
+
+$primary-color: #fdd419;
+$secondary-color: #0017e8;
+$tertiary-color: #445d6e;
+
+.user__header {
+	font-family: $font-primary;
+	background-color: #181a1b;
+
+	.topbar {
+		font-size: 14px;
+		color: #a6a8ab;
+		padding: 5px 0;
+		user-select: none;
+	}
+
+	.user__nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 15px 0;
+
+		.links {
+			display: flex;
+			align-items: center;
+
+			li {
+				list-style-type: none;
+			}
+
+			.profile {
+				display: flex;
+				align-items: center;
+				margin-right: 15px;
+
+				.name {
+					color: #a6a8ab;
+					margin-right: 10px;
+				}
+
+				img {
+					border-radius: 100%;
+					width: 35px;
+				}
+			}
+
+			.sign--out {
+				font-size: 38px;
+				color: white;
+				cursor: pointer;
+				transition: 0.3s ease;
+
+				&:hover {
+					color: $primary-color;
+				}
+			}
+		}
+	}
+}
+
+.bar__wrapper {
+	display: flex;
+	margin: 20px 0 50px;
+}
+
+@media screen and (max-width: 700px) {
+	.user__header {
+		.user__nav {
+			.links {
+				.profile {
+					.name {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.user__header {
+		.user__nav {
+			a {
+				.img {
+					width: 250px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 410px) {
+	.user__header {
+		.user__nav {
+			a {
+				.img {
+					width: 200px;
+				}
+			}
+
+			.links {
+				.profile {
+					img {
+						width: 28px;
+					}
+				}
+
+				.sign--out {
+					font-size: 31px;
+				}
+			}
+		}
+	}
+}

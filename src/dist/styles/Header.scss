@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+$font-primary: 'Roboto', sans-serif;
+
+$primary-color: #fdd419;
+$secondary-color: #0017e8;
+$tertiary-color: #445d6e;
+
+.public__nav {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	font-family: $font-primary;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 0;
+	z-index: 9;
+
+	.logo--home {
+		img {
+			width: 100%;
+			max-width: 250px;
+		}
+	}
+
+	ul {
+		display: flex;
+		justify-content: space-around;
+
+		li {
+			list-style-type: none;
+
+			a {
+				font-size: 13px;
+				color: white;
+			}
+
+			.login {
+				font-weight: 600;
+				color: rgb(46, 46, 46);
+				background-color: $primary-color;
+				border-radius: 25px;
+				padding: 12px 32px;
+
+				&:hover {
+					background-color: #fdd319f3;
+				}
+			}
+		}
+
+		li:nth-of-type(even) {
+			margin: 0 20px;
+		}
+
+		div {
+			background-color: white;
+			height: 100%;
+			width: 1px;
+		}
+	}
+}
+
+.home {
+	position: relative;
+	background-image: url('../images/football.jpg');
+	background-size: cover;
+	background-position: center top;
+	background-repeat: no-repeat;
+	height: 700px;
+	max-height: 100%;
+
+	&__overlay {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: rgba(0, 0, 0, 0.705);
+	}
+
+	&__wrapper {
+		display: flex;
+		justify-content: space-around;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-family: $font-primary;
+		color: white;
+		width: 95%;
+		max-width: 1000px;
+
+		.home__content {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			h1 {
+				font-size: 40px;
+				font-weight: 500;
+			}
+
+			h2 {
+				font-weight: 400;
+				font-size: 20px;
+				max-width: 500px;
+				margin: 30px 0;
+			}
+
+			.btns {
+				button {
+					font-weight: 600;
+					border: 2px solid $primary-color;
+					border-radius: 25px;
+					padding: 15px 32px;
+					width: 100%;
+					max-width: 190px;
+					cursor: pointer;
+				}
+
+				.start--btn {
+					background-color: $primary-color;
+					margin-right: 20px;
+				}
+
+				.update--btn {
+					background-color: rgba(255, 255, 255, 0);
+					color: $primary-color;
+				}
+			}
+		}
+
+		img {
+			width: 400px;
+		}
+	}
+}
+
+.banner {
+	text-align: center;
+	margin: 30px auto;
+
+	img {
+		border-radius: 4px;
+		width: 100%;
+		max-width: 720px;
+	}
+}
+
+@media screen and (max-width: 1020px) {
+	.home {
+		&__wrapper {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+}
+
+@media screen and (max-width: 895px) {
+	.home {
+		height: 550px;
+		max-height: 100%;
+
+		&__wrapper {
+			display: flex;
+			flex-direction: column;
+
+			.home__content {
+				margin: auto;
+			}
+		}
+
+		img {
+			display: none;
+		}
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.public__nav {
+		ul {
+			li:nth-of-type(1),
+			li:nth-of-type(2),
+			li:nth-of-type(3),
+			li:nth-of-type(4) {
+				display: none;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.public__nav {
+		ul {
+			li:nth-of-type(5) {
+				display: none;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.home {
+		&__wrapper {
+			.home__content {
+				h1 {
+					font-size: 34px;
+				}
+
+				h2 {
+					font-size: 20px;
+					margin: 15px 0 30px;
+				}
+
+				.btns {
+					button {
+						font-weight: 600;
+						border: 2px solid $primary-color;
+						border-radius: 25px;
+						padding: 15px 32px;
+						width: 100%;
+						max-width: 190px;
+						cursor: pointer;
+					}
+
+					.start--btn {
+						margin-right: 0;
+						margin-bottom: 10px;
+					}
+				}
+			}
+
+			img {
+				width: 400px;
+			}
+		}
+	}
+}
